@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import type { calenderProps } from "../types";
-import CalendarPopup from "./CalendarPopup";
 import { formatDate } from "../utils";
+import "./App.css";
+import CalendarPopup from "./CalendarPopup";
 
 export const Calendar = ({
   style,
@@ -11,8 +12,8 @@ export const Calendar = ({
   format,
   date = new Date(),
 }: calenderProps) => {
-  const [newDate, setNewDate] = useState(date);
-  const [isOpen, setIsOpen] = useState(false);
+  const [newDate, setNewDate] = useState<Date>(date || new Date());
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const popupRef = useRef<HTMLDivElement | null>(null);
 
   const togglePopup = () => setIsOpen((prev) => !prev);

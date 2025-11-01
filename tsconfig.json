@@ -1,20 +1,29 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2020",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
-    "jsx": "react-jsx",
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "outDir": "dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
     "skipLibCheck": true,
-    "noEmit": false,
-    "allowJs": true, // optional, only if you have JS files
-    "checkJs": true // optional, type-check JS
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }

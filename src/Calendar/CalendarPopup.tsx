@@ -74,19 +74,19 @@ const CalendarPopup = ({ date, onChange }: calenderPopupProps) => {
 
         <div className="date-grid grid grid-cols-7 gap-1 text-center mt-2">
           {dates.map((d, i) => {
-            const date = currentDate.getDate();
-            const month = currentDate.getMonth();
+            const isCurrentDate =
+              currentDate &&
+              currentDate.getMonth() === currentMonth &&
+              currentDate.getFullYear() === currentYear &&
+              currentDate.getDate() === d;
+
             return (
               <div
                 key={i}
-                className={`${
-                  month === currentMonth && date === d
-                    ? "active-date"
-                    : "calendar-date"
-                }`}
+                className={isCurrentDate ? "active-date" : "calendar-date"}
                 onClick={() => onSelectDate(d)}
               >
-                {d ? d : ""}
+                {d ?? ""}
               </div>
             );
           })}
