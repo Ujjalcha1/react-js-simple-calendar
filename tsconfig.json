@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "noEmit": false,
+    "allowJs": true, // optional, only if you have JS files
+    "checkJs": true // optional, type-check JS
+  },
+  "include": [
+    "src"
+  ]
+}
