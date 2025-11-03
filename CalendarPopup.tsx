@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { WEEK_SHORT } from "../constant";
-import type { calenderPopupProps } from "../types";
-import { MONTH_NAMES } from "../utils";
+import { WEEK_SHORT } from "./Constant";
+import { calenderPopupProps } from "./types";
+import { MONTH_NAMES } from "./Utils";
 
 const CalendarPopup = ({ date, onChange }: calenderPopupProps) => {
   const [currentDate, setCurrentDate] = useState(date);
@@ -30,19 +30,19 @@ const CalendarPopup = ({ date, onChange }: calenderPopupProps) => {
 
   const onPreviousMonth = () => {
     if (currentMonth === 0) {
-      setCurrentYear((prev) => prev - 1);
+      setCurrentYear((prev: number) => prev - 1);
       setCurrentMonth(11);
     } else {
-      setCurrentMonth((prev) => prev - 1);
+      setCurrentMonth((prev: number) => prev - 1);
     }
   };
 
   const onNextMonth = () => {
     if (currentMonth === 11) {
-      setCurrentYear((prev) => prev + 1);
+      setCurrentYear((prev: number) => prev + 1);
       setCurrentMonth(0);
     } else {
-      setCurrentMonth((prev) => prev + 1);
+      setCurrentMonth((prev: number) => prev + 1);
     }
   };
 

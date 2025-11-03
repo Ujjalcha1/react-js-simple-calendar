@@ -1,17 +1,17 @@
-.calender {
+.calendar {
     width: 200px;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    border: 1px solid #808000;
+    border-radius: 4px;
     display: flex;
-    padding: 5px;
+    padding: 8px;
     position: relative;
     align-items: center;
     justify-content: space-between;
 }
 
 .down-arrow-outline {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-left: 2px solid black;
     border-bottom: 2px solid black;
     transform: rotate(-45deg);
@@ -19,8 +19,8 @@
 }
 
 .left-arrow-outline {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-left: 2px solid black;
     border-bottom: 2px solid black;
     transform: rotate(45deg);
@@ -28,8 +28,8 @@
 }
 
 .right-arrow-outline {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-left: 2px solid black;
     border-bottom: 2px solid black;
     transform: rotate(-135deg);
@@ -39,63 +39,62 @@
 .calendar-header {
     display: flex;
     justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    align-items: center;
+    padding: 8px 0;
+    margin: 8px 0;
 }
 
 .calendar-popup {
     position: absolute;
     right: 0;
-    margin-top: 6px;
     background: white;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 10;
     top: calc(100% + 4px);
     left: 0;
     width: 100%;
-    padding: 10px;
+    padding: 16px;
 }
 
 .calendar-popup-content {
-    font-size: 0.9rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: 0.875rem;
+    padding: 8px 0;
 }
 
 .week-list {
-    flex-direction: row;
-    justify-content: space-around;
-    border-bottom: 1px solid #000000 !important;
-}
-
-.week-list,
-.date-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
+    border-bottom: 1px solid #808000 !important;
+    margin-bottom: 8px;
 }
 
 .week-list div {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+}
+
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 4px;
 }
 
 .date-grid div {
-    height: 20px;
-    width: 20px;
-    padding: 5px;
+    height: 24px;
+    width: 24px;
+    padding: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .active-date {
-    background-color: red;
-    border-radius: 100%;
+    background-color: #007bff;
+    border-radius: 50%;
     color: white;
     cursor: pointer;
 }

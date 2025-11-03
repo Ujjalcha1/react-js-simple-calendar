@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import type { calenderProps } from "../types";
-import { formatDate } from "../utils";
-import "./App.css";
 import CalendarPopup from "./CalendarPopup";
+import { calenderProps } from "./types";
+import { formatDate } from "./Utils";
 
-export const Calendar = ({
+const Calendar = ({
   style,
   className,
   leftIcon,
@@ -16,7 +15,7 @@ export const Calendar = ({
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const popupRef = useRef<HTMLDivElement | null>(null);
 
-  const togglePopup = () => setIsOpen((prev) => !prev);
+  const togglePopup = () => setIsOpen((prev: boolean) => !prev);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -50,3 +49,5 @@ export const Calendar = ({
     </div>
   );
 };
+
+export default Calendar;
