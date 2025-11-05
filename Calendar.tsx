@@ -11,7 +11,7 @@ const Calendar = ({
   format,
   date = new Date(),
 }: calenderProps) => {
-  const [newDate, setNewDate] = useState<Date>(date || new Date());
+  const [newDate, setNewDate] = useState<Date>(date);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const popupRef = useRef<HTMLDivElement | null>(null);
 

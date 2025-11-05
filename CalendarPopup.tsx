@@ -5,8 +5,8 @@ import { MONTH_NAMES } from "./Utils";
 
 const CalendarPopup = ({ date, onChange }: calenderPopupProps) => {
   const [currentDate, setCurrentDate] = useState(date);
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date(date).getFullYear());
+  const [currentMonth, setCurrentMonth] = useState(new Date(date).getMonth());
   const [dates, setDates] = useState<(number | null)[]>([]);
 
   useEffect(() => {
