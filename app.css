@@ -97,6 +97,11 @@
     cursor: pointer;
 }
 
+.rjsc-blank-arrow {
+    width: 12px;
+    height: 12px;
+}
+
 .rjsc-right-arrow-outline {
     width: 12px;
     height: 12px;
@@ -118,7 +123,6 @@
     position: absolute;
     right: 0;
     background: white;
-    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 10;
@@ -126,6 +130,7 @@
     left: 0;
     width: 300px;
     padding: 16px;
+    max-height: 311px;
 }
 
 .rjsc-rjsc-calendar-popup-content {
@@ -199,4 +204,84 @@
 .rjsc-sunday {
     color: red !important;
     font-weight: bold;
+}
+
+/* ===== Year List Styling ===== */
+.rjsc-year-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    text-align: center;
+    margin-top: 8px;
+    padding: 6px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 240px;
+    width: 300px;
+    justify-content: flex-start;
+    /* optional: centers items horizontally */
+}
+
+/* Each year box */
+.rjsc-year-list div {
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    /* padding: 8px 0; */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    /* width: 50px; */
+    padding: 5px 18px;
+}
+
+
+
+/* Year text */
+.rjsc-year-list p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Hover effect */
+.rjsc-year-list div:hover {
+    background-color: red;
+    transform: scale(1.05);
+}
+
+/* make p text white when hovered */
+.rjsc-year-list div:hover p {
+    color: white;
+}
+
+/* Active or selected year (optional class you can toggle dynamically) */
+.rjsc-active-year {
+    background-color: red !important;
+    color: #fff !important;
+}
+
+.rjsc-active-year p {
+    color: #fff !important;
+}
+
+/* Dark mode variation (if mode === "dark") */
+.rjsc-year-list-dark div {
+    background-color: #2c2c2c;
+    border-color: #444;
+    color: #ccc;
+}
+
+.rjsc-year-list-dark div:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.rjsc-active-year {
+    color: white;
+}
+
+.rjsc-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
 }

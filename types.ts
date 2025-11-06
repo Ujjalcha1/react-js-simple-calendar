@@ -8,12 +8,16 @@ export type calenderProps = {
   format?: string;
   date?: any;
   mode?: "light" | "dark";
+  minDate?: Date;
+  maxDate?: Date;
 };
 
 export type calenderPopupProps = {
   date?: any;
   onChange: (val: Date) => void;
   mode?: "light" | "dark";
+  minDate?: Date;
+  maxDate?: Date;
 };
 
 export type indexProps = {

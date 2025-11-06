@@ -11,6 +11,8 @@ const Calendar = ({
   format,
   date = new Date(),
   mode = "light",
+  minDate,
+  maxDate,
 }: calenderProps) => {
   const [newDate, setNewDate] = useState<Date>(date);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -72,7 +74,13 @@ const Calendar = ({
       </div>
 
       {isOpen && (
-        <CalendarPopup date={newDate} onChange={onChange} mode={mode} />
+        <CalendarPopup
+          date={newDate}
+          onChange={onChange}
+          mode={mode}
+          minDate={minDate}
+          maxDate={maxDate}
+        />
       )}
     </div>
   );
