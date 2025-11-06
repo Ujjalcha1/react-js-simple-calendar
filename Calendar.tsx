@@ -10,6 +10,7 @@ const Calendar = ({
   rightIcon,
   format,
   date = new Date(),
+  mode = "light",
 }: calenderProps) => {
   const [newDate, setNewDate] = useState<Date>(date);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -33,19 +34,46 @@ const Calendar = ({
 
   return (
     <div
-      className={`rjsc-calendar ${className ? ` ${className}` : ""}`}
+      className={`rjsc-calendar ${className ? ` ${className}` : ""} ${
+        mode === "light" ? "rjsc-calendar-light" : "rjsc-calendar-dark"
+      }`}
       style={style}
       ref={popupRef}
     >
-      {leftIcon ? <div style={{ width: "10%" }}>{leftIcon}</div> : null}
+      {leftIcon ? (
+        <div
+          className={`${
+            mode === "light" ? "rjsc-left-light" : "rjsc-left-dark"
+          }`}
+          style={{ width: "10%" }}
+        >
+          {leftIcon}
+        </div>
+      ) : null}
       <div style={{ width: leftIcon ? "80%" : "90%" }}>
-        <span>{formatDate(newDate, format)}</span>
+        <span
+          className={`${
+            mode === "light" ? "rjsc-date-light" : "rjsc-date-dark"
+          }`}
+        >
+          {formatDate(newDate, format)}
+        </span>
       </div>
       <div style={{ width: "10%" }} onClick={togglePopup}>
-        {rightIcon ?? <div className="rjsc-down-arrow-outline" />}
+        {rightIcon ?? (
+          <div
+            className={`rjsc-down-arrow-outline ${
+              mode === "light"
+                ? "rjsc-down-arrow-outline-light"
+                : "rjsc-down-arrow-outline-dark"
+            }`}
+          />
+        )}
       </div>
 
-      {isOpen && <CalendarPopup date={newDate} onChange={onChange} />}
+      {isOpen && (
+        <CalendarPopup date={newDate} onChange={onChange} mode={mode} />
+      )}
     </div>
   );
 };

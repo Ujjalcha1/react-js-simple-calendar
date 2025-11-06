@@ -3,10 +3,14 @@ import { WEEK_SHORT } from "./Constant";
 import { calenderPopupProps } from "./types";
 import { MONTH_NAMES } from "./Utils";
 
-const CalendarPopup = ({ date, onChange }: calenderPopupProps) => {
+const CalendarPopup = ({
+  date,
+  onChange,
+  mode = "light",
+}: calenderPopupProps) => {
   const [currentDate, setCurrentDate] = useState(date);
-  const [currentYear, setCurrentYear] = useState(new Date(date).getFullYear());
-  const [currentMonth, setCurrentMonth] = useState(new Date(date).getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date(date)?.getFullYear());
+  const [currentMonth, setCurrentMonth] = useState(new Date(date)?.getMonth());
   const [dates, setDates] = useState<(number | null)[]>([]);
 
   useEffect(() => {
@@ -54,38 +58,71 @@ const CalendarPopup = ({ date, onChange }: calenderPopupProps) => {
   };
 
   return (
-    <div className="rjsc-calendar-popup p-4">
+    <div
+      className={`rjsc-calendar-popup p-4  ${
+        mode === "light"
+          ? "rjsc-calendar-popup-light"
+          : "rjsc-calendar-popup-dark"
+      }`}
+    >
       <div className="rjsc-rjsc-calendar-popup-content">
         {/* Header */}
         <div className="rjsc-calendar-header flex justify-between items-center">
-          <div className="rjsc-left-arrow-outline" onClick={onPreviousMonth} />
-          <span className="font-semibold text-lg">
+          <div
+            className={`rjsc-left-arrow-outline ${
+              mode === "light"
+                ? "rjsc-left-arrow-outline-light"
+                : "rjsc-left-arrow-outline-dark"
+            }`}
+            onClick={onPreviousMonth}
+          />
+          <span
+            className={`font-semibold text-lg  ${
+              mode === "light"
+                ? "rjsc-month-name-light"
+                : "rjsc-month-name-dark"
+            }`}
+          >
             {MONTH_NAMES[currentMonth]} {currentYear}
           </span>
-          <div className="rjsc-right-arrow-outline" onClick={onNextMonth} />
+          <div
+            className={`rjsc-right-arrow-outline ${
+              mode === "light"
+                ? "rjsc-right-arrow-outline-light"
+                : "rjsc-right-arrow-outline-dark"
+            }`}
+            onClick={onNextMonth}
+          />
         </div>
 
         {/* Weekday Header */}
         <div className="rjsc-week-list grid grid-cols-7 gap-1 text-center font-semibold mt-2">
           {WEEK_SHORT.map((week, index) => (
-            <div key={index}>{week}</div>
+            <div className="rjsc-weeks" key={index}>
+              {week}
+            </div>
           ))}
         </div>
 
         <div className="rjsc-date-grid grid grid-cols-7 gap-1 text-center mt-2">
-          {dates.map((d, i) => {
+          {dates.map((d: any, i) => {
             const isCurrentDate =
               currentDate &&
               currentDate.getMonth() === currentMonth &&
               currentDate.getFullYear() === currentYear &&
               currentDate.getDate() === d;
-
+            const dateObj = new Date(currentYear, currentMonth, d);
+            const isSunday = dateObj.getDay() === 0;
             return (
               <div
                 key={i}
-                className={
+                className={`${
                   isCurrentDate ? "rjsc-active-date" : "rjsc-calendar-date"
-                }
+                } ${
+                  mode === "light"
+                    ? "rjsc-calendar-date-light"
+                    : "rjsc-calendar-date-dark"
+                } ${isSunday && "rjsc-sunday"}`}
                 onClick={() => onSelectDate(d)}
               >
                 {d ?? ""}
