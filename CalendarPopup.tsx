@@ -122,7 +122,7 @@ const CalendarPopup = ({
                   mode === "light"
                     ? "rjsc-calendar-date-light"
                     : "rjsc-calendar-date-dark"
-                } ${isSunday && "rjsc-sunday"}`}
+                } ${isSunday ? "rjsc-sunday" : ""}`}
                 onClick={() => onSelectDate(d)}
               >
                 {d ?? ""}
