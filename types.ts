@@ -7,7 +7,7 @@ export type calenderProps = {
   rightIcon?: any;
   format?: string;
   date?: any;
-  mode?: "light" | "dark";
+  theme?: "light" | "dark";
   minDate?: Date;
   maxDate?: Date;
 };
@@ -15,7 +15,7 @@ export type calenderProps = {
 export type calenderPopupProps = {
   date?: any;
   onChange: (val: Date) => void;
-  mode?: "light" | "dark";
+  theme?: "light" | "dark";
   minDate?: Date;
   maxDate?: Date;
 };

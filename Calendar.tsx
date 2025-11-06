@@ -10,7 +10,7 @@ const Calendar = ({
   rightIcon,
   format,
   date = new Date(),
-  mode = "light",
+  theme = "light",
   minDate,
   maxDate,
 }: calenderProps) => {
@@ -37,7 +37,7 @@ const Calendar = ({
   return (
     <div
       className={`rjsc-calendar ${className ? ` ${className}` : ""} ${
-        mode === "light" ? "rjsc-calendar-light" : "rjsc-calendar-dark"
+        theme === "light" ? "rjsc-calendar-light" : "rjsc-calendar-dark"
       }`}
       style={style}
       ref={popupRef}
@@ -45,7 +45,7 @@ const Calendar = ({
       {leftIcon ? (
         <div
           className={`${
-            mode === "light" ? "rjsc-left-light" : "rjsc-left-dark"
+            theme === "light" ? "rjsc-left-light" : "rjsc-left-dark"
           }`}
           style={{ width: "10%" }}
         >
@@ -55,7 +55,7 @@ const Calendar = ({
       <div style={{ width: leftIcon ? "80%" : "90%" }}>
         <span
           className={`${
-            mode === "light" ? "rjsc-date-light" : "rjsc-date-dark"
+            theme === "light" ? "rjsc-date-light" : "rjsc-date-dark"
           }`}
         >
           {formatDate(newDate, format)}
@@ -65,7 +65,7 @@ const Calendar = ({
         {rightIcon ?? (
           <div
             className={`rjsc-down-arrow-outline ${
-              mode === "light"
+              theme === "light"
                 ? "rjsc-down-arrow-outline-light"
                 : "rjsc-down-arrow-outline-dark"
             }`}
@@ -77,7 +77,7 @@ const Calendar = ({
         <CalendarPopup
           date={newDate}
           onChange={onChange}
-          mode={mode}
+          theme={theme}
           minDate={minDate}
           maxDate={maxDate}
         />
