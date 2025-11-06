@@ -6,7 +6,7 @@ import { generateYears, MONTH_NAMES } from "./Utils";
 const CalendarPopup = ({
   date,
   onChange,
-  mode = "light",
+  theme = "light",
   maxDate,
   minDate,
 }: calenderPopupProps) => {
@@ -105,7 +105,7 @@ const CalendarPopup = ({
   return (
     <div
       className={`rjsc-calendar-popup p-4  ${
-        mode === "light"
+        theme === "light"
           ? "rjsc-calendar-popup-light"
           : "rjsc-calendar-popup-dark"
       }`}
@@ -117,7 +117,7 @@ const CalendarPopup = ({
               className={`rjsc-left-arrow-outline ${
                 isPrevDisabled() ? "rjsc-disabled" : ""
               } ${
-                mode === "light"
+                theme === "light"
                   ? "rjsc-left-arrow-outline-light"
                   : "rjsc-left-arrow-outline-dark"
               }`}
@@ -136,7 +136,7 @@ const CalendarPopup = ({
           >
             <span
               className={`font-semibold text-lg ${
-                mode === "light"
+                theme === "light"
                   ? "rjsc-month-name-light"
                   : "rjsc-month-name-dark"
               }`}
@@ -147,7 +147,7 @@ const CalendarPopup = ({
             </span>
             <span
               className={`font-semibold text-lg  ${
-                mode === "light"
+                theme === "light"
                   ? "rjsc-month-name-light"
                   : "rjsc-month-name-dark"
               }`}
@@ -163,7 +163,7 @@ const CalendarPopup = ({
               className={`rjsc-right-arrow-outline ${
                 isNextDisabled() ? "rjsc-disabled" : ""
               } ${
-                mode === "light"
+                theme === "light"
                   ? "rjsc-right-arrow-outline-light"
                   : "rjsc-right-arrow-outline-dark"
               }`}
@@ -236,7 +236,7 @@ const CalendarPopup = ({
                     className={`${
                       isCurrentDate ? "rjsc-active-date" : "rjsc-calendar-date"
                     } ${
-                      mode === "light"
+                      theme === "light"
                         ? "rjsc-calendar-date-light"
                         : "rjsc-calendar-date-dark"
                     } ${isSunday ? "rjsc-sunday" : ""}`}
