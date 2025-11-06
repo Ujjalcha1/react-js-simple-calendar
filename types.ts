@@ -7,11 +7,13 @@ export type calenderProps = {
   rightIcon?: any;
   format?: string;
   date?: any;
+  mode?: "light" | "dark";
 };
 
 export type calenderPopupProps = {
   date?: any;
   onChange: (val: Date) => void;
+  mode?: "light" | "dark";
 };
 
 export type indexProps = {
