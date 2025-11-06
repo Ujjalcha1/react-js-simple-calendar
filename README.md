@@ -1,5 +1,5 @@
 
-![Logo](https://surely-assets.s3.ap-southeast-1.amazonaws.com/vecteezy_calendar-icon-vector_5988959.jpg)
+![Logo](https://surely-assets.s3.ap-southeast-1.amazonaws.com/vecteezy_calendar-icon-vector.png)
 
 
 # react-js-simple-calendar
