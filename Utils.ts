@@ -64,9 +64,12 @@ export const getOrdinal = (n: number): string => {
   }
 };
 
-export const generateYears = (): number[] => {
+export const generateYears = (
+  startYear = START_YEAR,
+  endYear = END_YEAR
+): number[] => {
   const result: number[] = [];
-  for (let index = START_YEAR; index <= END_YEAR; index++) {
+  for (let index = startYear; index <= endYear; index++) {
     result.push(index);
   }
   return result;

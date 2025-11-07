@@ -13,6 +13,9 @@ const Calendar = ({
   theme = "light",
   minDate,
   maxDate,
+  mode = "default",
+  maxYear,
+  minYear,
 }: calenderProps) => {
   const [newDate, setNewDate] = useState<Date>(date);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -80,6 +83,9 @@ const Calendar = ({
           theme={theme}
           minDate={minDate}
           maxDate={maxDate}
+          mode={mode}
+          maxYear={maxYear}
+          minYear={minYear}
         />
       )}
     </div>

@@ -10,6 +10,9 @@ export type calenderProps = {
   theme?: "light" | "dark";
   minDate?: Date;
   maxDate?: Date;
+  mode?: "default" | "advanced";
+  minYear?: string | number;
+  maxYear?: string | number;
 };
 
 export type calenderPopupProps = {
@@ -18,6 +21,9 @@ export type calenderPopupProps = {
   theme?: "light" | "dark";
   minDate?: Date;
   maxDate?: Date;
+  mode?: "default" | "advanced";
+  minYear?: string | number;
+  maxYear?: string | number;
 };
 
 export type indexProps = {
@@ -28,4 +34,12 @@ export type indexProps = {
   leftIcon?: string;
   rightIcon?: string;
   style?: React.CSSProperties;
+};
+
+export type YearData = {
+  year: number;
+  months: {
+    name: string;
+    days: (number | null)[];
+  }[];
 };
