@@ -150,26 +150,145 @@
     font-size: 0.875rem;
     max-height: 311px;
     overflow-y: auto;
+    border-radius: 10px;
+}
+
+.rjsc-advance-calendar-popup-content-dark {
+    background: black;
+}
+
+/* Modern Scrollbar Styles */
+.rjsc-advance-calendar-year-section {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 transparent;
 }
 
 .rjsc-advance-calendar-year-section::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
+    height: 8px;
+}
+
+.rjsc-advance-calendar-year-section::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin: 4px 0;
 }
 
 .rjsc-advance-calendar-year-section::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 6px;
+    background: #c1c1c1;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: all 0.3s ease;
 }
 
 .rjsc-advance-calendar-year-section::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
+    background: #a8a8a8;
+    border: 1px solid transparent;
+    background-clip: content-box;
+}
+
+.rjsc-advance-calendar-year-section::-webkit-scrollbar-thumb:active {
+    background: #8f8f8f;
+}
+
+.rjsc-advance-calendar-year-section::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Light Theme Scrollbar */
+.rjsc-advance-calendar-year-section.light {
+    scrollbar-color: #c1c1c1 #f5f5f5;
+}
+
+.rjsc-advance-calendar-year-section.light::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.rjsc-advance-calendar-year-section.light::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+}
+
+.rjsc-advance-calendar-year-section.light::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.rjsc-advance-calendar-year-section.light::-webkit-scrollbar-thumb:active {
+    background: #8f8f8f;
+}
+
+/* Dark Theme Scrollbar */
+.rjsc-advance-calendar-year-section.dark {
+    scrollbar-color: #555 #2a2a2a;
+}
+
+.rjsc-advance-calendar-year-section.dark::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+.rjsc-advance-calendar-year-section.dark::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.rjsc-advance-calendar-year-section.dark::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+.rjsc-advance-calendar-year-section.dark::-webkit-scrollbar-thumb:active {
+    background: #777;
+}
+
+/* Popup Content Scrollbar */
+.rjsc-advance-calendar-popup-content {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d1d1 transparent;
+}
+
+.rjsc-advance-calendar-popup-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.rjsc-advance-calendar-popup-content::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin: 4px 0;
+}
+
+.rjsc-advance-calendar-popup-content::-webkit-scrollbar-thumb {
+    background: #d1d1d1;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: all 0.3s ease;
+}
+
+.rjsc-advance-calendar-popup-content::-webkit-scrollbar-thumb:hover {
+    background: #b8b8b8;
+}
+
+.rjsc-advance-calendar-popup-content-dark {
+    scrollbar-color: #555 transparent;
+}
+
+.rjsc-advance-calendar-popup-content-dark::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.rjsc-advance-calendar-popup-content-dark::-webkit-scrollbar-thumb:hover {
+    background: #666;
 }
 
 .rjsc-input {
     border-width: 0px;
     border-bottom-width: 2px;
     border-color: black;
-    width: 71%;
+    width: 80%;
+}
+
+.rjsc-input-dark {
+    border-color: white !important;
+    background-color: black;
+    color: white;
 }
 
 .rjsc-input:focus {
@@ -178,7 +297,7 @@
 
 .rjsc-left-right-group {
     display: flex;
-    width: 23%;
+    width: 17%;
     justify-content: space-between;
 }
 
@@ -186,11 +305,7 @@
     padding: 6px 11px 29px;
     display: flex;
     justify-content: space-between;
-}
-
-.rjsc-rjsc-advance-calendar-popup-content {
-    font-size: 0.875rem;
-    padding: 8px 0;
+    padding-top: 15px;
 }
 
 .rjsc-week-list {
@@ -199,6 +314,7 @@
     text-align: center;
     border-bottom: 1px solid #808000 !important;
     margin-bottom: 8px;
+    padding: 0px 10px;
 }
 
 .rjsc-sticky-header {
@@ -208,11 +324,30 @@
     z-index: 5;
 }
 
+.rjsc-sticky-header-dark {
+    background: black !important;
+}
+
+.rjsc-month-year {
+    font-size: 14px;
+    margin-left: 10px;
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.rjsc-month-year-dark {
+    color: white;
+}
+
 .rjsc-week-list-sticky {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
     border-bottom: 1px solid #808000 !important;
+    padding: 0px 10px;
 }
 
 .rjsc-weeks {
@@ -229,6 +364,7 @@
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
     gap: 4px;
+    padding: 0px 10px;
 }
 
 .rjsc-date-grid div {
@@ -244,8 +380,14 @@
 .rjsc-active-date {
     background-color: red;
     border-radius: 50%;
-    color: white;
     cursor: pointer;
+    color: white !important;
+}
+
+.rjsc-sunday-active {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
 }
 
 .rjsc-calendar-date {
@@ -275,7 +417,6 @@
     font-weight: bold;
 }
 
-/* ===== Year List Styling ===== */
 .rjsc-year-list {
     display: flex;
     flex-wrap: wrap;
@@ -288,28 +429,68 @@
     max-height: 240px;
     width: 300px;
     justify-content: flex-start;
-    /* optional: centers items horizontally */
+}
+
+/* Modern scrollbar for year list */
+.rjsc-year-list {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f5f5f5;
+}
+
+.rjsc-year-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.rjsc-year-list::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+    margin: 4px 0;
+}
+
+.rjsc-year-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: all 0.3s ease;
+}
+
+.rjsc-year-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Dark theme for year list scrollbar */
+.rjsc-year-list-dark {
+    scrollbar-color: #555 #2a2a2a;
+}
+
+.rjsc-year-list-dark::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+.rjsc-year-list-dark::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.rjsc-year-list-dark::-webkit-scrollbar-thumb:hover {
+    background: #666;
 }
 
 /* Each year box */
 .rjsc-year-list div {
     background-color: #f5f5f5;
     border-radius: 6px;
-    /* padding: 8px 0; */
     cursor: pointer;
     transition: all 0.2s ease;
-    /* width: 50px; */
     padding: 5px 18px;
 }
-
-
 
 /* Year text */
 .rjsc-year-list p {
     margin: 0;
     font-size: 14px;
     font-weight: 500;
-    color: #333;
+    color: white;
 }
 
 /* Hover effect */

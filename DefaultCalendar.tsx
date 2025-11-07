@@ -47,13 +47,9 @@ const DefaultCalendar = ({
     const lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
 
     const tempDates: (number | null)[] = [];
-
-    // Push nulls before the first day
     for (let i = 0; i < firstDay; i++) {
       tempDates.push(null);
     }
-
-    // Push all actual dates
     for (let d = 1; d <= lastDate; d++) {
       tempDates.push(d);
     }
@@ -173,7 +169,12 @@ const DefaultCalendar = ({
         </div>
 
         {openYearList ? (
-          <div ref={listRef} className={`rjsc-year-list `}>
+          <div
+            ref={listRef}
+            className={`rjsc-year-list ${
+              theme === "dark" ? "rjsc-year-list-dark" : ""
+            }`}
+          >
             {years.map((item, index) => {
               return (
                 <div
@@ -191,7 +192,12 @@ const DefaultCalendar = ({
             })}
           </div>
         ) : openMonthList ? (
-          <div ref={monthRef} className={`rjsc-year-list `}>
+          <div
+            ref={monthRef}
+            className={`rjsc-year-list ${
+              theme === "dark" ? "rjsc-year-list-dark" : ""
+            }`}
+          >
             {MONTH_NAMES_LIST.map((item, index) => {
               return (
                 <div
@@ -232,12 +238,14 @@ const DefaultCalendar = ({
                   <div
                     key={i}
                     className={`${
-                      isCurrentDate ? "rjsc-active-date" : "rjsc-calendar-date"
-                    } ${
-                      theme === "light"
-                        ? "rjsc-calendar-date-light"
-                        : "rjsc-calendar-date-dark"
-                    } ${isSunday ? "rjsc-sunday" : ""}`}
+                      isSunday && isCurrentDate
+                        ? "rjsc-sunday-active"
+                        : isSunday
+                        ? "rjsc-sunday"
+                        : theme === "dark"
+                        ? "rjsc-calendar-date-dark"
+                        : "rjsc-calendar-date-light"
+                    } ${!isSunday && isCurrentDate ? "rjsc-active-date" : ""}`}
                     style={{
                       cursor: isDisabled ? "not-allowed" : "pointer",
                       opacity: isDisabled ? 0.4 : 1,

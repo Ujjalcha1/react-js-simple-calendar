@@ -103,13 +103,12 @@ export const formatDate = (
     a: date.getHours() >= 12 ? "pm" : "am",
   };
 
-  const tokens = Object.keys(map).sort((a, b) => b.length - a.length);
-  let formatted = format;
+  const tokenRegex = new RegExp(
+    Object.keys(map)
+      .sort((a, b) => b.length - a.length)
+      .join("|"),
+    "g"
+  );
 
-  tokens.forEach((token) => {
-    const regex = new RegExp(token, "g");
-    formatted = formatted.replace(regex, String(map[token]));
-  });
-
-  return formatted;
+  return format.replace(tokenRegex, (matched) => String(map[matched]));
 };

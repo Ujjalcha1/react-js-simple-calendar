@@ -52,11 +52,11 @@ export default App;
 
 | **Prop** | **Type** | **Default** | **Description** |
 |:----------|:----------|:------------|:----------------|
-| `date` | `string` / `Date` | `new Date()` | Sets the initial selected date. |
+| `date` | `Date` | `new Date()` | Sets the initial selected date. |
 | `onChange` | `function` | — | Callback that returns the selected date when changed. |
 | `theme` | `string` | `"light"` | Calendar theme. Accepts `"light"` or `"dark"`. |
-| `minDate` | `string` / `Date` | — | Minimum selectable date. Dates before this will be disabled. |
-| `maxDate` | `string` / `Date` | — | Maximum selectable date. Dates after this will be disabled. |
+| `minDate` | `Date` | — | Minimum selectable date. Dates before this will be disabled. |
+| `maxDate` | `Date` | — | Maximum selectable date. Dates after this will be disabled. |
 
 ## 🖼️ Advanced Usage
 
@@ -79,13 +79,14 @@ function App() {
     <div>
       <h1>Selected Date: {selectedDate.toDateString()}</h1>
 
-      <Calendar
-        date={selectedDate}          // Initial selected date
-        onChange={handleDateChange}  // Callback on date change
-        theme="dark"                 // Choose "light" or "dark"
-        minDate="2023-01-01"         // Disable dates before this
-        maxDate="2025-12-31"         // Disable dates after this
-      />
+       <Calendar
+          date={selectedDate}          // Initial selected date
+          onChange={handleDateChange}  // Callback on date change
+          theme="dark"                 // Choose "light" or "dark"
+          minDate="2023-01-01"         // Disable dates before this
+          maxDate="2025-12-31"         // Disable dates after this
+          mode="advanced"              // Enables advanced view 
+        />
     </div>
   );
 }
