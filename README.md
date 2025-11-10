@@ -1,7 +1,5 @@
 
 ![Logo](https://surely-assets.s3.ap-southeast-1.amazonaws.com/vecteezy_calendar-icon-vector.png)
-
-
 # react-js-simple-calendar
 
 
@@ -9,17 +7,18 @@
 
 
 
-A simple, customizable React calendar component for your projects.
+🧭 A simple, customizable React calendar component for modern web applications.
 
 react-js-simple-calendar is a simple, easy-to-use React calendar component designed for modern web applications.
 ## 🌟 Features
 
-- Easy to integrate into any React project
-- Light and dark themes
-- Minimum and maximum date restrictions
-- Callback on date selection
-- Supports both string and Date objects for date props
-- Fully responsive
+- 🧩 Easy to integrate into any React project
+- 🌗 Light and dark themes
+- 📅 Minimum and maximum date restrictions
+- ⚡ Callback on date selection
+- 🕒 Supports both string and Date objects for date props
+- 📱 Fully responsive design
+- 🔍 Advanced mode with year/month/day navigation
 
 
 ## Installation (for standard modern project)
@@ -57,6 +56,9 @@ export default App;
 | `theme` | `string` | `"light"` | Calendar theme. Accepts `"light"` or `"dark"`. |
 | `minDate` | `Date` | — | Minimum selectable date. Dates before this will be disabled. |
 | `maxDate` | `Date` | — | Maximum selectable date. Dates after this will be disabled. |
+| `mode` | `string` | `"default"` | Defines calendar display mode. Accepts `"default"` or `"advanced"` for full year/month/day navigation. |
+| `minYear` | `number` | `currentYear` | The earliest year displayed in the calendar year view. |
+| `maxYear` | `number` | `currentYear + 70` | The latest year displayed in the calendar year view. |
 
 ## 🖼️ Advanced Usage
 
@@ -85,7 +87,9 @@ function App() {
           theme="dark"                 // Choose "light" or "dark"
           minDate="2023-01-01"         // Disable dates before this
           maxDate="2025-12-31"         // Disable dates after this
-          mode="advanced"              // Enables advanced view 
+          mode="advanced"              // Enables advanced view
+          minYear={2020}               // Earliest year to show
+          maxYear={2030}               // Latest year to show
         />
     </div>
   );
@@ -106,3 +110,11 @@ Contributions are always welcome! Whether it's fixing bugs, improving documentat
    ```bash
    git clone https://github.com/ujjalCha1/react-js-simple-calendar
    cd react-js-simple-calendar
+
+## 💬 Connect
+
+👤 **Author:** [Ujjal Chatterjee](https://github.com/ujjalCha1)  
+📦 **NPM:** [react-js-simple-calendar](https://www.npmjs.com/package/react-js-simple-calendar)  
+⭐ **GitHub Repo:** [https://github.com/ujjalCha1/react-js-simple-calendar](https://github.com/ujjalCha1/react-js-simple-calendar)
+
+
